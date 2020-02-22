@@ -1,12 +1,14 @@
 <!-- Stampare una stringa verde se la variabile password passata in GET è uguale a “Boolean”, altrimenti stampare una stringa rossa. -->
 <?php
   $password = $_GET['password'];
+  // echo $password;
+  $text = 'Password corretta';
+  // var_dump($password);
   if ($password == 'Boolean') {
     $class = 'green';
-    $text = 'Fatto';
   } else {
     $class = 'red';
-    $text = 'Non fatto';
+    $text = 'Password non corretta';
   }
  ?>
 
@@ -16,8 +18,18 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="style.css">
+    <style media="screen">
+      .green {
+        color: green;
+      }
+      .red {
+        color: red;
+      }
+    </style>
   </head>
   <body>
-    <p><<?php echo $class; ?> <?php echo $text; ?></p>
+    <h2 class='<?php echo $class;?>'>
+      <?php echo $text;?>
+    </h2>
   </body>
 </html>
